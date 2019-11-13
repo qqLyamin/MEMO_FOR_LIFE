@@ -35,9 +35,36 @@ int main() {
 
 	//case 1:
 	//A tmp = A();
+	/*OUTPUT:
+		B constructor
+		inside1 constructor
+		inside2 constructor
+		A constructor
+		A DESTRUCTOR
+		inside2 DESTRUCTOR
+		inside1 DESTRUCTOR
+		B DESTRUCTOR*/
 
 	//case 2:
 	A * tmp = new A;
 	delete tmp;
+
+	/*OUTPUT WITHOUT DELETE:
+		B constructor
+		inside1 constructor
+		inside2 constructor
+		A constructor*/
+
+	/*OUTPUT WITH DELETE:
+		B constructor
+		inside1 constructor
+		inside2 constructor
+		A constructor
+		A DESTRUCTOR
+		inside2 DESTRUCTOR
+		inside1 DESTRUCTOR
+		B DESTRUCTOR*/
+
+
 	return 0;
 }
